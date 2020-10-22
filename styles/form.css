@@ -1,0 +1,36 @@
+form {
+    text-align: center;
+}
+
+form p {
+    display: flex;
+    justify-content: space-between;
+}
+
+form label {
+    font-weight: bold;
+    max-width: 25%;
+}
+
+form input, form select {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.btnForm {
+    width: 60%;
+    background-color: var(--color-black);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    transition: 300ms;
+}
+
+.btnForm:hover {
+    background-color: var(--color-primary);
+    color:  var(--color-black);
+}

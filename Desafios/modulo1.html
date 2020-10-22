@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 01</title>
+
+    <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Tela Inicial</a>
+            <a href="/" class="active" onclick="return false;">Módulo 01</a>
+          </nav>
+        <div class="headerDesafios">
+            <h1>Desáfios módulo 01</h1>
+            <h2>Introdução JavaScript</h2>
+        </div>
+    </header>
+    <main>
+        <div class="exerciseNumber">
+            <h2>Exercício 01</h2>
+        </div>
+        <div class="wrapper">
+            <section class="coluna">
+                <h3 class="text-center">Enunciado original</h3>
+                <p>Crie uma função que dado o objeto a seguir:</p>
+                <code>
+                    var endereco =
+                        { rua: "Rua dos pinheiros",
+                            numero: 1293,
+                            bairro: "Centro",
+                            cidade: "São Paulo",
+                            uf: "SP"
+                        };    
+                    </code>
+                <p>Retorne o seguinte conteúdo:</p>
+                <code>
+                    O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros"
+                    com nº 1293.
+                </code>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                <form method="POST">
+                    <p>
+                        <label for="txtEstado">Estado (UF):</label>
+                        <select name="user_estado" id="txtEstado">
+                            <option value="PR">Paraná</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="txtCidade">Cidade:</label>
+                        <input type="text" id="txtCidade" name="user_city" />
+                    </p>
+                    <p>
+                        <span>
+                            <label for="txtBairro">Bairro:</label>
+                        </span>
+                        
+                        <input type="text" id="txtBairro" name="user_neighborhood" />
+                    </p>
+                    <p>
+                        <label for="txtRua">Rua:</label>
+                        <input type="text" name="rua" id="txtRua" />
+                    </p>
+                    <p>
+                        <label for="txtNumero">Número:</label>
+                        <input type="number" name="numero" id="txtNumero" />
+                    </p>
+                    <button id="btnEndereco" class="btnForm" onclick="montaEndereco()" type="submit">Montar endereco</button>
+                </form>
+                <p>
+                    <span id="spanEnderecoCompleto"></span>
+                </p>
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 02</h2>
+        </div>
+        <div class="wrapper">
+            <section class="coluna">
+                <h3 class="text-center">Enunciado original</h3>
+                <p>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</p>
+                <p><code>function pares(x, y) { // código aqui }</code></p>
+                <p><code>pares(32, 321);</code></p>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                <form method="POST">
+                    <p>
+                        <label for="txtInicio">Número de início:</label>
+                        <input type="number" name="input_number" id="txtInicio" />
+                    </p>
+                    <p>
+                        <label for="txtFim">Número final:</label>
+                        <input type="number" name="input_fim" id="txtFim" />
+                    </p>
+                    <button id="btnPares" class="btnForm" onclick="pares()">Encontrar</button>
+                </form>
+                <p>
+                    <span id="spanPares"></span>
+                </p>
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 04</h2>
+        </div>
+        <div class="wrapper">
+            <section class="coluna">
+                <h3 class="text-center">Enunciado original</h3>
+                <p>Escreva uma função que dado um total de anos de estudo retorna o
+                    quão experiente o usuário é:</p>
+                <p><code>function experiencia(anos) { // código aqui }</code></p>
+                <p><code>var anosEstudo = 7;</code></p>
+                <p><code>experiencia(anosEstudo);</code></p>
+                <ul>
+                    <li>De 0-1 ano: Iniciante</li>
+                    <li>De 1-3 anos: Intermediário</li>
+                    <li>De 3-6 anos: Avançado</li>
+                    <li>De 7 acima: Jedi Master</li>
+                </ul>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                <form method="POST">
+                    <p>
+                        <label for="txtName">Nome:</label>
+                        <input type="text" id="txtName">
+                    </p>
+                    <p>
+                        <label for="txtAge">Anos:</label>
+                        <input type="number" id="txtAge" />
+                    </p>
+                    <button id="btnExperience" class="btnForm" onclick="experiencia()">Experiencia</button>
+                    <p><span id="spanExperience"></span></p>
+                </form>
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 05</h2>
+        </div>
+        <div class="wrapper">
+            <section class="coluna">
+                <h3 class="text-center">Enunciado original</h3>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                <form method="post"></form>
+            </section>
+        </div>
+    </main>
+    <script type="application/javascript">
+        document.getElementById('btnEndereco')
+                .addEventListener('click', () => event.preventDefault());
+        document.getElementById('btnPares')
+                .addEventListener('click', () => event.preventDefault());
+        document.getElementById('btnExperience')
+                .addEventListener('click', () => event.preventDefault());
+        
+        /* Exercício 01 */
+        function montaEndereco() {
+            var getState = document.getElementById('txtEstado').value;
+            var getCity = document.getElementById('txtCidade').value;
+            var getNeighborhood = document.getElementById('txtBairro').value;
+            var getStreet = document.getElementById('txtRua').value;
+            var getNumber = document.getElementById('txtNumero').value;
+
+            const spanEndereco = document.getElementById('spanEnderecoCompleto');
+            if (getState == ""
+                || getCity == ""
+                || getNeighborhood == ""
+                || getStreet == ""
+                || getNumber == ""
+                )
+            {
+                spanEndereco.innerHTML = "Preencha todos os campos!";
+                spanEndereco.style.color = "red";
+                return;
+            }
+
+            const address = "O usuário mora em " + getCity + " / " + getState +
+                ", no bairro " + getNeighborhood + ", na rua " + getStreet
+                + " nº " + getNumber;
+            
+            spanEndereco.innerHTML = address;
+            spanEndereco.removeAttribute('style');
+        };
+
+        /* Exercício 02 */
+        function pares() {
+            var x = document.getElementById('txtInicio').value;
+            var y = document.getElementById('txtFim').value;
+            const spanResult = document.getElementById('spanPares');
+
+            if (x == '' || y == ''){
+                spanResult.innerText = 'Preencha todos os campos!';
+                spanResult.style.color = 'red';
+                return;
+            };
+
+            x = parseFloat(x);
+            y = parseFloat(y);
+
+            if (x > y) {
+                const z = x;
+                x = y;
+                y = z;
+            }
+
+            var list = [];
+            while (x <= y) {
+                if (x % 2 == 0)
+                    list.push(x);
+                
+                x += 1;
+            }
+            
+            if (list.length > 0){
+                spanResult.innerText = 'Números pares: ' + list;
+                spanResult.removeAttribute('style');
+            }
+            else
+                spanResult.innerText = 'Nenhum número par!';
+        }
+
+        /* Exercício 04 */
+        function experiencia() {
+            const name = document.getElementById('txtName').value;
+            var age = document.getElementById('txtAge').value;
+            const spanExperience = document.getElementById('spanExperience');
+            
+            if (age == '' || name == ''){
+                spanExperience.innerText = 'Preencha todos os campos.';
+                spanExperience.style.color = 'red';
+                return
+            }
+
+            if (age < 0) {
+                spanExperience.innerText = "O número de anos precisa ser maior ou igual a 0.";
+                spanExperience.style.color = 'red';                
+                return;
+            }
+            else if (age >= 0 && age < 1)
+                spanExperience.innerText = 'O(A) ' + name + ' é iniciante';
+            else if (age >= 1 && age < 3)
+                spanExperience.innerText = 'O(A) ' + name + ' é intermediário';
+            else if (age >= 3 && age < 7)
+                spanExperience.innerText = 'O(A) ' + name + ' é avançado';
+            else
+                spanExperience.innerText = 'O(A) ' + name + ' é Jedi Master';
+
+            spanExperience.removeAttribute('style');
+        }
+
+        /* Exercício 05 */
+        function habilidades(users) {
+            usuarios.forEach(element => {
+                console.log("O " + element.nome + " possui as habilidades: " + element.habilidades)
+            });
+        }
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["JavaScript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabirel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+    </script>
+</body>
+</html>
