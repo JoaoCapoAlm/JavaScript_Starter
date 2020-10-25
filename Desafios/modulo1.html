@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Módulo 01</title>
+    <title>JavaScript - Módulo 01</title>
 
     <link rel="stylesheet" type="text/css" href="../styles/colors.css">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -16,7 +16,7 @@
             <a href="/" class="active" onclick="return false;">Módulo 01</a>
           </nav>
         <div class="headerDesafios">
-            <h1>Desáfios módulo 01</h1>
+            <h1>Desafios módulo 01</h1>
             <h2>Introdução JavaScript</h2>
         </div>
     </header>
@@ -26,7 +26,7 @@
         </div>
         <div class="wrapper">
             <section class="coluna">
-                <h3 class="text-center">Enunciado original</h3>
+                <h3 class="text-center">Enunciado proposto</h3>
                 <p>Crie uma função que dado o objeto a seguir:</p>
                 <code>
                     var endereco =
@@ -48,32 +48,33 @@
                 <form method="POST">
                     <p>
                         <label for="txtEstado">Estado (UF):</label>
-                        <select name="user_estado" id="txtEstado">
+                        <select id="txtEstado">
+                            <option value="">Estado</option>
                             <option value="PR">Paraná</option>
                             <option value="SC">Santa Catarina</option>
                             <option value="RS">Rio Grande do Sul</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="ES">Espirito Santo</option>
                         </select>
                     </p>
                     <p>
                         <label for="txtCidade">Cidade:</label>
-                        <input type="text" id="txtCidade" name="user_city" />
+                        <input type="text" id="txtCidade" placeholder="Cidade" />
                     </p>
                     <p>
-                        <span>
-                            <label for="txtBairro">Bairro:</label>
-                        </span>
-                        
-                        <input type="text" id="txtBairro" name="user_neighborhood" />
+                        <label for="txtBairro">Bairro:</label>
+                        <input type="text" id="txtBairro" placeholder="Bairro" />
                     </p>
                     <p>
-                        <label for="txtRua">Rua:</label>
-                        <input type="text" name="rua" id="txtRua" />
+                        <label for="txtRua">Rua / Avenida:</label>
+                        <input type="text" id="txtRua" placeholder="Rua/Avenida" />
                     </p>
                     <p>
                         <label for="txtNumero">Número:</label>
-                        <input type="number" name="numero" id="txtNumero" />
+                        <input type="number" id="txtNumero" placeholder="Número" />
                     </p>
-                    <button id="btnEndereco" class="btnForm" onclick="montaEndereco()" type="submit">Montar endereco</button>
+                    <button id="btnEndereco" class="btnForm" onclick="montaEndereco()">Montar endereco</button>
                 </form>
                 <p>
                     <span id="spanEnderecoCompleto"></span>
@@ -84,8 +85,8 @@
             <h2>Exercício 02</h2>
         </div>
         <div class="wrapper">
-            <section class="coluna">
-                <h3 class="text-center">Enunciado original</h3>
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
                 <p>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</p>
                 <p><code>function pares(x, y) { // código aqui }</code></p>
                 <p><code>pares(32, 321);</code></p>
@@ -95,11 +96,11 @@
                 <form method="POST">
                     <p>
                         <label for="txtInicio">Número de início:</label>
-                        <input type="number" name="input_number" id="txtInicio" />
+                        <input type="number" id="txtInicio" placeholder="Início" />
                     </p>
                     <p>
                         <label for="txtFim">Número final:</label>
-                        <input type="number" name="input_fim" id="txtFim" />
+                        <input type="number" id="txtFim" placeholder="Fim" />
                     </p>
                     <button id="btnPares" class="btnForm" onclick="pares()">Encontrar</button>
                 </form>
@@ -109,35 +110,46 @@
             </section>
         </div>
         <div class="exerciseNumber">
+            <h2>Exercício 03</h2>
+        </div>
+        <div class="wrapper">
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
+            </section>
+            <section class="coluna resulucao">
+                <h3 class="text-center">Resolução</h3>
+            </section>
+        </div>
+        <div class="exerciseNumber">
             <h2>Exercício 04</h2>
         </div>
         <div class="wrapper">
-            <section class="coluna">
-                <h3 class="text-center">Enunciado original</h3>
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
                 <p>Escreva uma função que dado um total de anos de estudo retorna o
                     quão experiente o usuário é:</p>
-                <p><code>function experiencia(anos) { // código aqui }</code></p>
+                <p><code>function experiência(anos) { // código aqui }</code></p>
                 <p><code>var anosEstudo = 7;</code></p>
-                <p><code>experiencia(anosEstudo);</code></p>
-                <ul>
+                <p><code>experiência(anosEstudo);</code></p>
+                <ul id="listNivelExperienci">
                     <li>De 0-1 ano: Iniciante</li>
                     <li>De 1-3 anos: Intermediário</li>
                     <li>De 3-6 anos: Avançado</li>
                     <li>De 7 acima: Jedi Master</li>
                 </ul>
             </section>
-            <section class="coluna">
+            <section class="coluna resulucao">
                 <h3 class="text-center">Resolução</h3>
-                <form method="POST">
+                <form method="POST" aria-labelledby="">
                     <p>
                         <label for="txtName">Nome:</label>
-                        <input type="text" id="txtName">
+                        <input type="text" id="txtName" placeholder="Nome" aria-required="true" >
                     </p>
                     <p>
                         <label for="txtAge">Anos:</label>
-                        <input type="number" id="txtAge" />
+                        <input type="number" id="txtAge" placeholder="Anos" aria-required="true" />
                     </p>
-                    <button id="btnExperience" class="btnForm" onclick="experiencia()">Experiencia</button>
+                    <button id="btnExperience" class="btnForm" onclick="experiencia()">Experiência</button>
                     <p><span id="spanExperience"></span></p>
                 </form>
             </section>
@@ -146,12 +158,46 @@
             <h2>Exercício 05</h2>
         </div>
         <div class="wrapper">
-            <section class="coluna">
-                <h3 class="text-center">Enunciado original</h3>
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
+                <p>Dado o seguinte vetor de objetos:</p>
+                <code><p>var usuarios = [</p>
+                    <p>&nbsp;&nbsp;{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;nome: "Diego",</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;habilidades: ["Javascript", "ReactJS", "Redux"]</p>
+                    <p>&nbsp;&nbsp;},</p>
+                    <p>&nbsp;&nbsp;{</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;nome: "Gabriel",</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;habilidades: ["VueJS", "Ruby on Rails", "Elixir"]</p>
+                    <p>&nbsp;&nbsp;}</p>
+                   ];</code>
             </section>
-            <section class="coluna">
+            <section class="coluna resulucao">
                 <h3 class="text-center">Resolução</h3>
-                <form method="post"></form>
+                <form method="post">
+                    <p>
+                        <label for="txtUser">Nome:</label>
+                        <input type="text" id="txtUser" placeholder="Nome" />
+                    </p>
+                    <button type="button" class="btnForm" onclick="addUser()">Adicionar</button>
+                    <hr>
+                    <p>
+                        <label for="ddlUsers">Usuários:</label>
+                        <select id="ddlUsers">
+                            <option value="">Usuários</option>
+                        </select>
+                        <input type="hidden" id="inputHiden">
+                    </p>
+                    <p>
+                        <label for="txtHabilidade">Habilidades:</label>
+                        <input type="text" id="txtHabilidade" placeholder="Habilidades" >
+                    </p>
+                    <span id="spanErro" style="color: red;"></span>
+                    <button type="button" class="btnForm" onclick="addHability()">Adicionar</button>
+                </form>
+                <hr>
+                <ol type="1" id="listUsers">
+                </ol>
             </section>
         </div>
     </main>
@@ -221,12 +267,12 @@
                 x += 1;
             }
             
-            if (list.length > 0){
+            if (list.length > 0)
                 spanResult.innerText = 'Números pares: ' + list;
-                spanResult.removeAttribute('style');
-            }
             else
                 spanResult.innerText = 'Nenhum número par!';
+
+            spanResult.removeAttribute('style');
         }
 
         /* Exercício 04 */
@@ -241,40 +287,81 @@
                 return
             }
 
+            var experiency;
             if (age < 0) {
                 spanExperience.innerText = "O número de anos precisa ser maior ou igual a 0.";
                 spanExperience.style.color = 'red';                
                 return;
             }
             else if (age >= 0 && age < 1)
-                spanExperience.innerText = 'O(A) ' + name + ' é iniciante';
+                experiency = 'iniciante';
             else if (age >= 1 && age < 3)
-                spanExperience.innerText = 'O(A) ' + name + ' é intermediário';
+                experiency = 'intermediário';
             else if (age >= 3 && age < 7)
-                spanExperience.innerText = 'O(A) ' + name + ' é avançado';
+                experiency = 'avançado';
             else
-                spanExperience.innerText = 'O(A) ' + name + ' é Jedi Master';
+                experiency = 'Jedi Master';
 
+            spanExperience.innerText = `O(A) ${name} é ${experiency}`;
             spanExperience.removeAttribute('style');
         }
 
         /* Exercício 05 */
-        function habilidades(users) {
-            usuarios.forEach(element => {
-                console.log("O " + element.nome + " possui as habilidades: " + element.habilidades)
-            });
+        function addUser() {
+            var user = document.getElementById('txtUser');
+            
+            if (user.value == null || user.value == undefined || user.value == ''){
+                alert('Preencha o campo com o nome!');
+                return;
+            }
+
+            const inputHiden = document.getElementById('inputHiden');
+            
+            var valor = 1;
+            if (inputHiden.value != '')
+                valor = parseInt(inputHiden.value);
+
+            const name = user.value;
+            var newItem = `<option value="${valor}">${name}</option>`;
+            
+            user.value = null;
+            
+            const ddlUsers = document.getElementById('ddlUsers');
+            ddlUsers.innerHTML += newItem;
+            inputHiden.value = valor + 1;
+            
+            newItem = `<li value="${valor}">${name}`;
+            newItem += `<ul id="ul_${valor}"></ul>`;
+            newItem += '</li>';
+
+            var listUsers = document.getElementById('listUsers');
+            listUsers.innerHTML += newItem;
         }
 
-        var usuarios = [
-            {
-                nome: "Diego",
-                habilidades: ["JavaScript", "ReactJS", "Redux"]
-            },
-            {
-                nome: "Gabirel",
-                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        function addHability() {
+            const user = document.getElementById('ddlUsers');
+            const hability = document.getElementById('txtHabilidade');
+            const erro = document.getElementById('spanErro');
+
+            if (user.value == null
+                || user.value == ''
+                || hability.value == null
+                || hability.value == ''
+            ){
+                erro.innerText = 'Preencha todos os campos';
+                return;
             }
-        ];
+            
+            const ulUser = document.getElementById(`ul_${user.value}`);
+            var habilityUser = ulUser.innerHTML;
+            habilityUser += `<li>${hability.value}</li>`;
+
+            ulUser.innerHTML = habilityUser;
+
+            hability.value = '';
+            erro.innerText = '';
+        }
+
     </script>
 </body>
 </html>

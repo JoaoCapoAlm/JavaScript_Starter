@@ -18,7 +18,7 @@ form input, form select {
 }
 
 .btnForm {
-    width: 60%;
+    width: 70%;
     background-color: var(--color-black);
     color: var(--color-primary);
     text-transform: uppercase;
@@ -33,4 +33,14 @@ form input, form select {
 .btnForm:hover {
     background-color: var(--color-primary);
     color:  var(--color-black);
+}
+
+#listNivelExperienci {
+    text-align: left;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li input {
+    width: auto;
 }

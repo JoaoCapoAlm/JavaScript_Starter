@@ -1,15 +1,25 @@
+:root {
+    --height-header: 25vh;
+    --height-footer: 15vh;
+}
+
 html, body{
     margin: 0 auto;
     font-size: 10px;
     color: var(--color-black);
-    background-color: #EEE;
+    background-color: var(--color-white-gray);
+    
 }
 
-.headerDesafios {
+header {
+    min-height: var(--height-header);
+}
+
+header div {
     background-color: var(--color-black);
-    color: var(--color-primary);
+    color: var(--color-white-gray);
     box-sizing: border-box;
-    height: 25vh;
+    min-height: 20vh;
     
     font-size: 2rem;
     text-transform: uppercase;
@@ -28,26 +38,41 @@ nav {
     background-color: var(--color-black);
     overflow: hidden;
     text-transform: uppercase;
-    border-bottom: 2px solid var(--color-dark-purple);
+    border-bottom: 0.2rem solid var(--color-dark-purple);
 }
 
 nav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: var(--color-white-gray);
     text-align: center;
-    padding: 14px 16px;
+    padding: 1.4rem 1.6rem;
     text-decoration: none;
     font-size: 1.5rem;
 }
 
 nav a:hover {
     background-color: var(--color-dark-purple);
+    cursor: pointer;
 }
 
 nav a.active {
     background-color: var(--color-primary);
     font-weight: bold;
+    cursor: default;
+}
+
+main {
+    min-height: calc(100vh - var(--height-header) - var(--height-footer));
+}
+
+footer {
+    height: var(--height-footer);
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 0.2rem solid var(--color-dark-purple);
+    color: var(--color-white-gray);
 }
 
 .exerciseNumber {
@@ -64,11 +89,12 @@ nav a.active {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50vw 50vw;
     margin-top: 5vh;
     margin-bottom: 5vh;
     font-size: 1.6rem;
 }
+
 .coluna {
     margin-left: 5vw;
     margin-right: 5vw;
@@ -79,6 +105,10 @@ nav a.active {
 }
 
 @media (max-width: 700px){
+    html, body {
+        font-size: 8px;
+    }
+    
     .wrapper {
         grid-template-columns: 100%        
     }
