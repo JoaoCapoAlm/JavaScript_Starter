@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="../styles/colors.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+    <title>JavaScript - Módulo 02</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Tela Inicial</a>
+            <a href="./modulo1.html">Módulo 01</a>
+            <a href="/" class="active" onclick="return false;">Módulo 02</a>
+          </nav>
+        <div class="headerDesafios">
+            hgrou
+            <h1>Desafios módulo 02</h1>
+            <h2>Manipulando a DOM</h2>
+        </div>
+    </header>
+    <main>
+        <div class="exerciseNumber">
+            <h2>Exercício 01</h2>
+        </div>
+        <div class="grade">
+            <section class="coluna">
+                <h3 class="text-center">Enunciado proposto</h3>
+                <p>Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+                    vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+                    aparecer na tela.
+                </p>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 02</h2>
+        </div>
+        <div class="grade">
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
+                <p>Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o
+                    mouse por cima de algum quadrado troque sua cor para uma cor aleatória
+                    gerada pela função abaixo:
+                </p>
+                <code>
+                    <p>function getRandomColor() {</p>
+                    <p>&nbsp;&nbsp;var letters = "0123456789ABCDEF";</p>
+                    <p>&nbsp;&nbsp;var color = "#";</p>
+                    <p>&nbsp;&nbsp;for (var i = 0; i < 6; i++) {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;color += letters[Math.floor(Math.random() * 16)];</p>
+                    <p>&nbsp;&nbsp;}</p>
+                    <p>&nbsp;&nbsp;return color;</p>
+                    <p>}</p>
+                    <p>var newColor = getRandomColor(); // #E943F0</p>
+                </code>
+            </section>
+            <section class="coluna">
+                <h3 class="text-center">Resolução</h3>
+                
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 03</h2>
+        </div>
+        <div class="grade">
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
+                <p>A partir do seguinte vetor:</p>
+                <code>var nomes = ["Diego", "Gabriel", "Lucas"];</code>
+                <p>Preencha uma lista (TAG: ul) no HTML com os itens da seguinte forma:</p>
+                <ul>
+                    <li>Diego</li>
+                    <li>Gabriel</li>
+                    <li>Lucas</li>
+                </ul>
+            </section>
+            <section class="coluna resulucao">
+                <h3 class="text-center">Resolução</h3>
+            </section>
+        </div>
+        <div class="exerciseNumber">
+            <h2>Exercício 04</h2>
+        </div>
+        <div class="grade">
+            <section class="coluna enunciado">
+                <h3 class="text-center">Enunciado proposto</h3>
+                <p>Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir</p>
+                <p><code>
+                    < input type="text" name="nome">
+                </code></p>
+                <p><code>
+                    < button onClick="adicionar()">Adicionar< /butto>
+                </code></p>
+                <p>Ao clicar no botão, a função <code>adicionar()</code> deve ser disparada adicionando um novo item a lista de
+                    nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+                    demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.</p>
+            </section>
+            <section class="coluna resulucao">
+                <h3 class="text-center">Resolução</h3>
+                
+            </section>
+        </div>
+    </main>
+</body>
+</html>
