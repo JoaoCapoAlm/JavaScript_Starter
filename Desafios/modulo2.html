@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,27 +26,18 @@
     </header>
     <main>
         <div class="exerciseNumber">
-            <h2>Exercício 01</h2>
+            <h2>Exercícios 01 e 02</h2>
         </div>
         <div class="grade">
             <section class="coluna">
-                <h3 class="text-center">Enunciado proposto</h3>
+                <h3 class="text-center">Enunciado proposto exercício 01</h3>
                 <p>Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
-                    vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
-                    aparecer na tela.
+                    vermelho com 100px de altura e largura.
                 </p>
+                <p>Sempre que o botão for clicado um novo quadrado deve aparecer na tela.</p>
             </section>
-            <section class="coluna">
-                <h3 class="text-center">Resolução</h3>
-                
-            </section>
-        </div>
-        <div class="exerciseNumber">
-            <h2>Exercício 02</h2>
-        </div>
-        <div class="grade">
             <section class="coluna enunciado">
-                <h3 class="text-center">Enunciado proposto</h3>
+                <h3 class="text-center">Enunciado proposto do exercício 02</h3>
                 <p>Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o
                     mouse por cima de algum quadrado troque sua cor para uma cor aleatória
                     gerada pela função abaixo:
@@ -63,11 +54,14 @@
                     <p>var newColor = getRandomColor(); // #E943F0</p>
                 </code>
             </section>
-            <section class="coluna">
-                <h3 class="text-center">Resolução</h3>
-                
-            </section>
         </div>
+        <section class="row text-center">
+            <h3 class="text-center">Resolução</h3>
+            <div id="divSquare" class="panel">
+
+            </div>
+            <button onclick="addSquare()">Adicionar</button>
+        </section>
         <div class="exerciseNumber">
             <h2>Exercício 03</h2>
         </div>
@@ -85,6 +79,15 @@
             </section>
             <section class="coluna resulucao">
                 <h3 class="text-center">Resolução</h3>
+                <form method="POST">
+                    <label for="txtName">Nome:</label>
+                    <input type="text" id="txtName" />
+                    <button id="addName" class="btnForm" onclick="addName()">Adicionar nome</button>    
+                </form>
+                
+                <ul id="ulNames">
+
+                </ul>
             </section>
         </div>
         <div class="exerciseNumber">
@@ -110,5 +113,36 @@
             </section>
         </div>
     </main>
+    <script type="application/javascript">
+    document.getElementById('addName')
+            .addEventListener('click', () => event.preventDefault());
+
+    /* Exercício 01 */
+        function addSquare() {
+            const divSquare = document.getElementById('divSquare');
+            var square = document.createElement("div");
+            square.classList.add('square');
+
+            divSquare.appendChild(square);
+            return;
+        }
+        /* Exercício 02 */
+        function getRandomColor() {
+            const square = document.getElementsByClassName()
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        /* Exercício 03 */
+        function addName() {
+            var name = document.getElementById('txtName').value;
+            console.log(name);
+        }
+    </script>
 </body>
 </html>
