@@ -60,14 +60,14 @@
             <div id="divSquare" class="panel">
 
             </div>
-            <button onclick="addSquare()">Adicionar</button>
+            <button class="btnForm" onclick="addSquare()">Adicionar</button>
         </section>
         <div class="exerciseNumber">
-            <h2>Exercício 03</h2>
+            <h2>Exercício 03 e 04</h2>
         </div>
         <div class="grade">
             <section class="coluna enunciado">
-                <h3 class="text-center">Enunciado proposto</h3>
+                <h3 class="text-center">Enunciado proposto exercício 03</h3>
                 <p>A partir do seguinte vetor:</p>
                 <code>var nomes = ["Diego", "Gabriel", "Lucas"];</code>
                 <p>Preencha uma lista (TAG: ul) no HTML com os itens da seguinte forma:</p>
@@ -77,25 +77,8 @@
                     <li>Lucas</li>
                 </ul>
             </section>
-            <section class="coluna resulucao">
-                <h3 class="text-center">Resolução</h3>
-                <form method="POST">
-                    <label for="txtName">Nome:</label>
-                    <input type="text" id="txtName" />
-                    <button id="addName" class="btnForm" onclick="addName()">Adicionar nome</button>    
-                </form>
-                
-                <ul id="ulNames">
-
-                </ul>
-            </section>
-        </div>
-        <div class="exerciseNumber">
-            <h2>Exercício 04</h2>
-        </div>
-        <div class="grade">
             <section class="coluna enunciado">
-                <h3 class="text-center">Enunciado proposto</h3>
+                <h3 class="text-center">Enunciado proposto exercício 04</h3>
                 <p>Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir</p>
                 <p><code>
                     &lt;input type="text" name="nome"&gt;
@@ -107,9 +90,25 @@
                     nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
                     demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.</p>
             </section>
-            <section class="coluna resulucao">
-                <h3 class="text-center">Resolução</h3>
-                
+            
+        </div>
+        <h3 class="text-center">Resolução</h3>
+        <div class="grade">
+            
+            <section class="coluna">
+                <form method="POST">
+                    <p>
+                        <label for="txtName">Nome:</label>
+                        <input type="text" id="txtName" />
+                    </p>
+                    <button id="addName" class="btnForm" onclick="newName(); return false;">Adicionar nome</button>    
+                    <p><span class="error" id="spanListError"></span></p>
+                </form>
+            </section>
+            <section class="coluna">
+                <ul id="listNames">
+
+                </ul>
             </section>
         </div>
     </main>
@@ -138,10 +137,22 @@
             return color;
         }
 
-        /* Exercício 03 */
-        function addName() {
-            var name = document.getElementById('txtName').value;
-            console.log(name);
+        /* Exercício 03 e 04 */
+        function newName() {
+            const name = document.getElementById('txtName').value;
+            if (name == '' || name == null){
+                document.getElementById('spanListError').innerText = 'Não foi escrito nenhum nome.';
+                return;
+            }
+
+            const list = document.getElementById('listNames');
+            
+            var newItem = document.createElement('li');
+            newItem.innerText = name;
+            newItem.id = list.getElementsByTagName('li').length;
+            
+            list.appendChild(newItem);
+            document.getElementById('spanListError').innerText = '';
         }
     </script>
 </body>
