@@ -42,17 +42,17 @@
                     mouse por cima de algum quadrado troque sua cor para uma cor aleatória
                     gerada pela função abaixo:
                 </p>
-                <code>
-                    <p>function getRandomColor() {</p>
-                    <p>&nbsp;&nbsp;var letters = "0123456789ABCDEF";</p>
-                    <p>&nbsp;&nbsp;var color = "#";</p>
-                    <p>&nbsp;&nbsp;for (var i = 0; i < 6; i++) {</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;color += letters[Math.floor(Math.random() * 16)];</p>
-                    <p>&nbsp;&nbsp;}</p>
-                    <p>&nbsp;&nbsp;return color;</p>
-                    <p>}</p>
-                    <p>var newColor = getRandomColor(); // #E943F0</p>
-                </code>
+                <pre class="codigo"><code>function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i &lt; 6; i++) {
+        color += letters[
+            Math.floor(Math.random() * 16)
+        ];
+    }
+    return color;
+}
+var newColor = getRandomColor(); // #E943F0</code></pre>
             </section>
         </div>
         <section class="row text-center">
@@ -69,7 +69,7 @@
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto exercício 03</h3>
                 <p>A partir do seguinte vetor:</p>
-                <code>var nomes = ["Diego", "Gabriel", "Lucas"];</code>
+                <pre class="codigo"><code>var nomes = ["Diego", "Gabriel", "Lucas"];</code></pre>
                 <p>Preencha uma lista (TAG: ul) no HTML com os itens da seguinte forma:</p>
                 <ul>
                     <li>Diego</li>
@@ -80,12 +80,8 @@
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto exercício 04</h3>
                 <p>Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir</p>
-                <p><code>
-                    &lt;input type="text" name="nome"&gt;
-                </code></p>
-                <p><code>
-                    &lt;button onClick="adicionar()"&gt;Adicionar&lt;/button&gt;
-                </code></p>
+                <pre class="codigo"><code>&lt;input type="text" name="nome"&gt;
+&lt;button onClick="adicionar()"&gt;Adicionar&lt;/button&gt;</code></pre>
                 <p>Ao clicar no botão, a função <code>adicionar()</code> deve ser disparada adicionando um novo item a lista de
                     nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
                     demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.</p>

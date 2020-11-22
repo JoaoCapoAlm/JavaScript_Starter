@@ -94,9 +94,11 @@ footer i {
     color: var(--color-white-gray);
 }
 
-code, code p {
+.codigo {
+    background-color: #474C50;
+    color: white;
     font-family: monospace;
-    line-height: 1rem;
+    padding: 15px;
 }
 
 .exerciseNumber {
