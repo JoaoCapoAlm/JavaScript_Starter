@@ -88,7 +88,7 @@ var newColor = getRandomColor(); // #E943F0</code></pre>
             </section>
             
         </div>
-        <h3 class="text-center">Resolução</h3>
+        <h3 class="text-center resolucao">Resolução</h3>
         <div class="grade">
             
             <section class="coluna">
@@ -97,7 +97,7 @@ var newColor = getRandomColor(); // #E943F0</code></pre>
                         <label for="txtName">Nome:</label>
                         <input type="text" id="txtName" />
                     </p>
-                    <button id="addName" class="btnForm" onclick="newName(); return false;">Adicionar nome</button>    
+                    <button id="addName" class="btnForm" onclick="newName(); return false;">Adicionar</button>    
                     <p><span class="error" id="spanListError"></span></p>
                 </form>
             </section>
@@ -109,10 +109,10 @@ var newColor = getRandomColor(); // #E943F0</code></pre>
         </div>
     </main>
     <script type="application/javascript">
-    document.getElementById('addName')
-            .addEventListener('click', () => event.preventDefault());
+        document.getElementById('addName')
+                .addEventListener('click', () => event.preventDefault());
 
-    /* Exercício 01 */
+        /* Exercício 01 */
         function addSquare() {
             const divSquare = document.getElementById('divSquare');
             var square = document.createElement("div");
@@ -122,16 +122,6 @@ var newColor = getRandomColor(); // #E943F0</code></pre>
             return;
         }
         /* Exercício 02 */
-        function getRandomColor() {
-            const square = document.getElementsByClassName()
-            var letters = "0123456789ABCDEF";
-            var color = "#";
-
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
 
         /* Exercício 03 e 04 */
         function newName() {
