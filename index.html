@@ -45,6 +45,7 @@
                 <li><i class="fab fa-css3-alt"></i> CSS</li>
                 <li><i class="fab fa-js-square"></i> JavaScript</li>
                 <li><i class="fab fa-font-awesome"></i> Font Awesome (Icones)</li>
+                <li><i class="fab fa-github"></i> API GitHub</li>
               </ul>
             </div>
           </div>
@@ -58,7 +59,8 @@
               </h1>
             </div>
             <div class="panel-body">
-              <p>É possivel entrar em contato comigo pelo LinkedIn e encontrar outros projetos meus no GitHub.</p>
+              <p>É possivel entrar em contato comigo pelo LinkedIn. Os meus projetos disponíveis atualmente no GitHub são:</p>
+              <ol id="olProjects" type="1"></ol>
             </div>
             <div class="panel-footer">
               <a href="https://github.com/joaoCapoAlm/" target="_blank" rel="noopener noreferrer" style="margin-right: 5px;">
@@ -167,5 +169,45 @@
       <i class="fab fa-github-square"></i>
     </a>
   </footer>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`)
+      .then(function(response){
+        const repositories = response.data;
+        const list = document.getElementById('olProjects');
+        repositories.forEach(element => {
+          const listItem = document.createElement('li');
+          const subList = document.createElement('ul');
+          const subItemCode = document.createElement('li');
+          const subItemPage =document.createElement('li');
+          const repository = document.createElement('a');
+          const homePage = document.createElement('a');
+
+          listItem.id = element.id;
+          listItem.innerText = element.name;
+          if (element.name === 'JavaScript_Starter')
+            listItem.innerText += ' (projeto atual)'
+          
+          repository.href = element.html_url;
+          repository.innerText = 'Código';
+          repository.target = '_blank';
+
+          subItemCode.appendChild(repository);
+          subList.appendChild(subItemCode);
+
+          if (element.homepage !== ''){
+            homePage.href = element.homepage;
+            homePage.innerText = 'Página Inicial';
+            homePage.target = '_blank';
+
+            subItemPage.appendChild(homePage);
+            subList.appendChild(subItemPage);
+          }
+
+          listItem.appendChild(subList);
+          list.appendChild(listItem);
+        });
+      })
+  </script>
 </body>
 </html>

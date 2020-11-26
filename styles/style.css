@@ -195,6 +195,13 @@ footer i {
     color: var(--color-red) !important;
 }
 
+#olProjects > li > ul > li > a {
+    text-decoration: underline;
+    font-style: italic;
+    color: var(--color-black);
+    font-weight: bold;
+}
+
 @media (max-width: 700px){
     html, body {
         font-size: 8px;
