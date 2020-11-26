@@ -12,6 +12,7 @@
     <title>JavaScript - Módulo 01</title>
 </head>
 <body>
+    <!-- TODO: Revisar texto da página -->
     <header>
         <nav>
             <a href="../index.html">Tela Inicial</a>
@@ -48,7 +49,9 @@ checaIdade(20).then(function()
 });</code></pre>
             </section>
             <section class="coluna">
-                
+                <form method="POST">
+
+                </form>
             </section>
         </div>
         <div class="exerciseNumber">
@@ -86,6 +89,58 @@ checaIdade(20).then(function()
                 <p>Dica: Quando o usuário não existe, a requisição irá cair no <code>.catch</code> com código de erro 404.</p>
             </section>
         </div>
+        <h3 class="text-center resolucao">Resolução</h3>
+        <section class="grade">
+            <div class="coluna">
+                <form method="post">
+                    <p>
+                        <label for="txtUserGit">Usuário GitHub</label>
+                        <input type="text" id="txtUserGit" />
+                    </p>
+                    <button id="btnRepos" class="btnForm" onclick="getRepos();">Procurar repositórios</button>
+                    <p><span class="error" id="spanRepoError"></span></p>
+                </form>
+            </div>
+            <div class="coluna">
+                <h3 class="text-center">Repositórios</h3>
+                <ul id="listRepos">
+                </ul>
+            </div>
+        </section>
     </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('btnRepos')
+            .addEventListener('click', () => event.preventDefault());
+        
+        // Exercício 02 e 03
+        function getRepos(){
+            const list = document.getElementById('listRepos');
+            list.innerHTML = '<li id="liAviso">Carregando...</li>';
+            
+            const aviso = document.getElementById('liAviso');
+
+            var user = document.getElementById('txtUserGit').value;
+            var repos = [];
+            
+            axios.get(`https://api.github.com/users/${user}/repos`)
+                .then(function(response) {
+                    var resposta = response.data;
+                    
+                    list.innerHTML = '';
+                    resposta.forEach(item => repos.push(item.name));
+                    repos.sort();
+                    repos.forEach(repo => {
+                        var item = document.createElement('li');
+                        item.innerText = repo;
+                        list.appendChild(item);
+                    });
+                }).catch(function(error){
+                    aviso.innerText = error;
+                    aviso.style.color = 'red';
+                }
+            );
+        }
+    </script>
 </body>
 </html>
