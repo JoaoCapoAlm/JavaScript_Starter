@@ -118,26 +118,29 @@ checaIdade(20).then(function()
             
             const aviso = document.getElementById('liAviso');
 
-            var user = document.getElementById('txtUserGit').value;
+            const user = document.getElementById('txtUserGit').value;
             var repos = [];
             
-            axios.get(`https://api.github.com/users/${user}/repos`)
-                .then(function(response) {
-                    var resposta = response.data;
-                    
-                    list.innerHTML = '';
-                    resposta.forEach(item => repos.push(item.name));
-                    repos.sort();
-                    repos.forEach(repo => {
-                        var item = document.createElement('li');
-                        item.innerText = repo;
-                        list.appendChild(item);
-                    });
-                }).catch(function(error){
-                    aviso.innerText = error;
-                    aviso.style.color = 'red';
-                }
-            );
+
+            
+            axios.get(`https://api.github.com/users/${user}/repos`, {
+                headers: { 'Authorization': 'token 0253273f173484b14727b40c6ef7089913a14579'}
+            }).then(function(response) {
+                var resposta = response.data;
+                
+                list.innerHTML = '';
+                resposta.forEach(item => repos.push(item.name));
+                repos.sort();
+                repos.forEach(repo => {
+                    const item = document.createElement('li');
+                    item.innerText = repo;
+                    list.appendChild(item);
+                });
+            }).catch(function(error){
+                aviso.innerText = error;
+                aviso.style.color = 'red';
+                console.warn(error);
+            });
         }
     </script>
 </body>
