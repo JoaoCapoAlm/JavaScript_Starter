@@ -9,15 +9,11 @@
   <script src="https://kit.fontawesome.com/c0a130f7f7.js" crossorigin="anonymous"></script>
 
   <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
-  <title>JavaScript - Statarter</title>
+  <title>Starter</title>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="/" class="active" onclick="return false" aria-readonly="true">Tela Inicial</a>
-      <a href="./Desafios/modulo1.html">Módulo 01</a>
-      <a href="./Desafios/modulo2.html">Módulo 02</a>
-      <a href="./Desafios/modulo4.html">Módulo 04</a>
+    <nav id="navMenu">
     </nav>
     <div class="headerDesafios">
       <h1>Curso de JavaScript</h1>
@@ -169,6 +165,7 @@
       <i class="fab fa-github-square"></i>
     </a>
   </footer>
+  <script src="./script/menu.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`)

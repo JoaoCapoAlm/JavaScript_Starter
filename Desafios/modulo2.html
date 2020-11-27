@@ -9,16 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
     <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
-    <title>JavaScript - Módulo 02</title>
+    <title>Módulo 2</title>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="../index.html">Tela Inicial</a>
-            <a href="./modulo1.html">Módulo 01</a>
-            <a href="/" class="active" onclick="return false;">Módulo 02</a>
-            <a href="./modulo4.html">Módulo 04</a>
-          </nav>
+        <nav id="navMenu">
+        </nav>
         <div class="headerDesafios">
             <h1>Desafios módulo 02</h1>
             <h2>Manipulando a DOM</h2>
@@ -107,6 +103,7 @@ var newColor = getRandomColor(); // #E943F0</code></pre>
             </section>
         </div>
     </main>
+    <script src="../script/menu.js"></script>
     <script type="application/javascript">
         document.getElementById('addName')
                 .addEventListener('click', () => event.preventDefault());
