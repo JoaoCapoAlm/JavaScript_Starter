@@ -115,9 +115,28 @@ pares(32, 321);</code></pre>
         <div class="grade">
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto</h3>
+                <p>
+                    Escreva uma função que verifique se o vetor de habilidades passado possui a
+                    habilidade "Javascript" e retorna um booleano <kbd>true/false</kbd> caso exista ou não.
+                </p>
+                <pre class="codigo"><code>function temHabilidade(skills) {
+    // código aqui
+}
+var skills = ["Javascript", "ReactJS", "React Native"];
+temHabilidade(skills); // true ou false</code></pre>
+                <p>Dica: para verificar se um vetor contém um valor, utilize o método indexO</p>
             </section>
             <section class="coluna resulucao">
                 <h3 class="text-center">Resolução</h3>
+                <form>
+                    <p>
+                        <label for="txtNewHability">Nova habilidade</label>
+                        <input type="text" id="txtNewHability" placeholder="Habilidade" />
+                    </p>
+                    <button id="btnNewHability" class="btnForm" onclick="newHability()">Adidionar</button>
+                </form>
+                <p><span id="spanExists">Possui JavaScript? Não</span></p>
+                <ul id="listHabilities"></ul>
             </section>
         </div>
         <div class="exerciseNumber">
@@ -140,7 +159,7 @@ experiência(anosEstudo);</code></pre>
             </section>
             <section class="coluna resulucao">
                 <h3 class="text-center">Resolução</h3>
-                <form method="POST" aria-labelledby="">
+                <form>
                     <p>
                         <label for="txtName">Nome:</label>
                         <input type="text" id="txtName" placeholder="Nome" aria-required="true" >
@@ -205,15 +224,12 @@ experiência(anosEstudo);</code></pre>
     </main>
     <script src="../script/menu.js"></script>
     <script type="application/javascript">
-        document.getElementById('btnEndereco')
-                .addEventListener('click', () => event.preventDefault());
-        document.getElementById('btnPares')
-                .addEventListener('click', () => event.preventDefault());
-        document.getElementById('btnExperience')
-                .addEventListener('click', () => event.preventDefault());
         
         /* Exercício 01 */
         function montaEndereco() {
+            event.preventDefault();
+            event.stopPropagation();
+
             var getState = document.getElementById('txtEstado').value;
             var getCity = document.getElementById('txtCidade').value;
             var getNeighborhood = document.getElementById('txtBairro').value;
@@ -243,6 +259,9 @@ experiência(anosEstudo);</code></pre>
 
         /* Exercício 02 */
         function pares() {
+            event.preventDefault();
+            event.stopPropagation();
+
             var x = document.getElementById('txtInicio').value;
             var y = document.getElementById('txtFim').value;
             const spanResult = document.getElementById('spanPares');
@@ -278,8 +297,39 @@ experiência(anosEstudo);</code></pre>
             spanResult.removeAttribute('style');
         }
 
+        /* Exercício 03 */
+        var habilities = [];
+
+        function newHability() {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const hability = document.getElementById('txtNewHability').value;
+            if (habilities.indexOf(hability) == -1){
+                habilities.push(hability);
+                
+                const itemList = document.createElement('li');
+                itemList.innerText = hability;
+                itemList.id = hability;
+                
+                const listHability = document.getElementById('listHabilities');
+                listHability.appendChild(itemList);
+            }
+
+            const search = habilities.indexOf('JavaScript');
+            
+            if(search != -1){
+                document.getElementById('spanExists').innerText = 'Possui JavaScript? Sim';
+            } else {
+                document.getElementById('spanExists').innerText = 'Possui JavaScript? Não';
+            }
+        }
+
         /* Exercício 04 */
         function experiencia() {
+            event.preventDefault();
+            event.stopPropagation();
+
             const name = document.getElementById('txtName').value;
             var age = document.getElementById('txtAge').value;
             const spanExperience = document.getElementById('spanExperience');
@@ -311,6 +361,9 @@ experiência(anosEstudo);</code></pre>
 
         /* Exercício 05 */
         function addUser() {
+            event.preventDefault();
+            event.stopPropagation();
+
             var user = document.getElementById('txtUser');
             
             if (user.value == null || user.value == undefined || user.value == ''){
@@ -341,7 +394,11 @@ experiência(anosEstudo);</code></pre>
             listUsers.innerHTML += newItem;
         }
 
+        /* Exercício 05 */
         function addHability() {
+            event.preventDefault();
+            event.stopPropagation();
+
             const user = document.getElementById('ddlUsers');
             const hability = document.getElementById('txtHabilidade');
             const erro = document.getElementById('spanErro');
