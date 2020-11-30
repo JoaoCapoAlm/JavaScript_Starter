@@ -173,7 +173,9 @@
   <script src="./script/menu.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`)
+    axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`, {
+      headers: { 'Authorization': 'token 0253273f173484b14727b40c6ef7089913a14579'}
+    })
       .then(function(response){
         const repositories = response.data;
         const list = document.getElementById('olProjects');
@@ -187,8 +189,6 @@
 
           listItem.id = element.id;
           listItem.innerText = element.name;
-          if (element.name === 'JavaScript_Starter')
-            listItem.innerText += ' (projeto atual)'
           
           repository.href = element.html_url;
           repository.innerText = 'Código';
