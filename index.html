@@ -143,7 +143,7 @@
           <div class="panel">
             <div class="panel-heading">
               <h1>Módulo 04</h1>
-              <h2></h2>
+              <h2>JS Assíncrono</h2>
             </div>
             <div class="panel-body">
               <h3>Temas abordados</h3>
@@ -173,9 +173,7 @@
   <script src="./script/menu.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`, {
-      headers: { 'Authorization': 'token 0253273f173484b14727b40c6ef7089913a14579'}
-    })
+    axios.get(`https://api.github.com/users/JoaoCapoAlm/repos`)
       .then(function(response){
         const repositories = response.data;
         const list = document.getElementById('olProjects');

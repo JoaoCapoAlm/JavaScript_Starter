@@ -123,9 +123,8 @@ checaIdade(20).then(function()
             
 
             
-            axios.get(`https://api.github.com/users/${user}/repos`, {
-                headers: { 'Authorization': 'token 0253273f173484b14727b40c6ef7089913a14579'}
-            }).then(function(response) {
+            axios.get(`https://api.github.com/users/${user}/repos`)
+            .then(function(response) {
                 var resposta = response.data;
                 
                 list.innerHTML = '';
