@@ -1,6 +1,12 @@
 :root {
     --height-header: 25vh;
     --height-footer: 10vh;
+    /* Colors */
+    --color-black: #0D0D0F;
+    --color-primary: #8257E6;
+    --color-dark-purple: #5227b6;
+    --color-white-gray: #EEE;
+    --color-red: red;
 }
 
 html, body {
@@ -97,8 +103,7 @@ footer i {
 .codigo {
     background-color: #474C50;
     color: white;
-    font-family: monospace;
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 .exerciseNumber {

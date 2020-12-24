@@ -1,3 +1,8 @@
+var root = window.location.protocol + '//' + window.location.hostname;
+if (root.includes('localhost') || root.includes('127.0.0.1')){
+  root += ':' + window.location.port;
+}
+
 const navMenu = document.getElementById('navMenu');
 const titlePage = document.title;
 
@@ -16,28 +21,17 @@ menuMod4.text = 'Módulo 4'
 const modules = [menuMod1, menuMod2, menuMod4]
 
 var numberMod = 0;
-if (titlePage.includes('Módulo')){
-  menuHome.href = '../';
-  
-  modules.forEach(page => {
-    numberMod !== 2 ? numberMod += 1 : numberMod += 2
+menuHome.href = root;
 
-    page.href = `./modulo${numberMod}.html`;
+modules.forEach(page => {
+  numberMod !== 2 ? numberMod += 1 : numberMod += 2
 
-    if(titlePage.includes(numberMod)){
-      page.classList.add('active');
-    }
-  });
-} else {
-  menuHome.href = '/';
-  menuHome.classList.add('active');
+  page.href = `${root}/Desafios/modulo${numberMod}.html`;
 
-  modules.forEach(page => {
-    numberMod !== 2 ? numberMod += 1 : numberMod += 2
-
-    page.href = `./Desafios/modulo${numberMod}.html`;
-  });
-}
+  if(titlePage.includes(numberMod)){
+    page.classList.add('active');
+  }
+});
 
 navMenu.appendChild(menuHome);
 modules.forEach(page => navMenu.appendChild(page));

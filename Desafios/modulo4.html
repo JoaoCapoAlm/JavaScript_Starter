@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Almeida">
     
-    <link rel="stylesheet" type="text/css" href="../styles/colors.css">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
@@ -34,16 +33,18 @@
                     segundos retornará se usuário é maior ou não que 18 anos. Se o usuário ter mais que 18 anos de
                     idade o resultado deve cair no <code>.then</code>, caso contrário, no <code>.catch</code>
                 </p>
-                <pre class="codigo"><code>function checaIdade(idade) {
-    // Retornar uma promise
-}
-checaIdade(20).then(function()
-{
-    console.log("Maior que 18");
-}).catch(function()
-{
-    console.log("Menor que 18");
-});</code></pre>
+                <div class="codigo"><code>
+                    function checaIdade(idade) {<br />
+                        // Retornar uma promise<br />
+                    }<br />
+                    checaIdade(20).then(function()<br />
+                    {<br />
+                        console.log("Maior que 18");
+                    }).catch(function()<br />
+                    {<br />
+                        console.log("Menor que 18");<br />
+                    });
+                </code></div>
             </section>
             <section class="coluna">
                 <form method="POST">
@@ -64,16 +65,20 @@ checaIdade(20).then(function()
                 </p>
                 <p>URL de exemplo: https://api.github.com/users/diego3g/repos</p>
                 <p>Basta alterar "diego3g" pelo nome do usuário.</p>
-                <pre class="codigo"><code>&lt;input type="text" name="user"&gt;
-&lt;button onclick=""&gt;Adicionar&lt;/button&gt;</code></pre>
+                <div class="codigo"><code>
+                    &lt;input type="text" name="user"&gt;<br />
+                    &lt;button onclick=""&gt;Adicionar&lt;/button&gt;
+                </code></div>
                 <p>Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:</p>
-                <pre class="codigo"><code>&lt;ul&gt;
-    &lt;li&gt;repo1&lt;/li&gt;
-    &lt;li&gt;repo2&lt;/li&gt;
-    &lt;li&gt;repo3&lt;/li&gt;
-    &lt;li&gt;repo4&lt;/li&gt;
-    &lt;li&gt;repo5&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                <div class="codigo"><code>
+                    &lt;ul&gt;<br />
+                        &lt;li&gt;repo1&lt;/li&gt;<br />
+                        &lt;li&gt;repo2&lt;/li&gt;<br />
+                        &lt;li&gt;repo3&lt;/li&gt;<br />
+                        &lt;li&gt;repo4&lt;/li&gt;<br />
+                        &lt;li&gt;repo5&lt;/li&gt;<br />
+                    &lt;/ul&gt;
+                </code></div>
             </section>
             <section class="coluna">
                 <h3 class="text-center">Enunciado proposto exercício 03</h3>
@@ -81,7 +86,7 @@ checaIdade(20).then(function()
                     A partir do resultado do exemplo anterior adicione um indicador de carregamento em tela no lugar da lista apenas
                     enquanto a requisição estiver acontecendo:
                 </p>
-                <pre class="codigo"><code>&lt;li&gt;Carregando...&lt;/li&gt;</code></pre>
+                <div class="codigo"><code>&lt;li&gt;Carregando...&lt;/li&gt;</code></div>
                 <p>Além disso, adicione uma mensagem de erro em tela caso o usuário no Github não exista.</p>
                 <p>Dica: Quando o usuário não existe, a requisição irá cair no <code>.catch</code> com código de erro 404.</p>
             </section>

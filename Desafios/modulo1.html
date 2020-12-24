@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Almeida">
     
-    <link rel="stylesheet" type="text/css" href="../styles/colors.css">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
@@ -29,14 +28,16 @@
             <section class="coluna">
                 <h3 class="text-center">Enunciado proposto</h3>
                 <p>Crie uma função que dado o objeto a seguir:</p>
-                <pre class="codigo"><code>var endereco =
-{
-    rua: "Rua dos pinheiros",
-    numero: 1293,
-    bairro: "Centro",
-    cidade: "São Paulo",
-    uf: "SP"
-};</code></pre>
+                <div class="codigo"><code>
+                    var endereco =
+                    {<br />
+                        rua: "Rua dos pinheiros",<br />
+                        numero: 1293,<br />
+                        bairro: "Centro",<br />
+                        cidade: "São Paulo",<br />
+                        uf: "SP"<br />
+                    };
+                </code></div>
                 <p>Retorne o seguinte conteúdo:</p>
                 <code>
                     O usuário mora em São Paulo / SP, no bairro Centro, na rua "Rua dos Pinheiros"
@@ -88,8 +89,10 @@
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto</h3>
                 <p>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</p>
-                <pre class="codigo"><code>function pares(x, y) { // código aqui }
-pares(32, 321);</code></pre>
+                <div class="codigo"><code>
+                    function pares(x, y) { // código aqui }<br />
+                    pares(32, 321);
+                </code></div>
             </section>
             <section class="coluna">
                 <h3 class="text-center">Resolução</h3>
@@ -119,11 +122,13 @@ pares(32, 321);</code></pre>
                     Escreva uma função que verifique se o vetor de habilidades passado possui a
                     habilidade "Javascript" e retorna um booleano <kbd>true/false</kbd> caso exista ou não.
                 </p>
-                <pre class="codigo"><code>function temHabilidade(skills) {
-    // código aqui
-}
-var skills = ["Javascript", "ReactJS", "React Native"];
-temHabilidade(skills); // true ou false</code></pre>
+                <div class="codigo"><code>
+                    function temHabilidade(skills) {<br />
+                        // código aqui<br />
+                    }<br />
+                    var skills = ["Javascript", "ReactJS", "React Native"];<br />
+                    temHabilidade(skills); // true ou false
+                </code></div>
                 <p>Dica: para verificar se um vetor contém um valor, utilize o método indexO</p>
             </section>
             <section class="coluna resulucao">
@@ -147,9 +152,11 @@ temHabilidade(skills); // true ou false</code></pre>
                 <h3 class="text-center">Enunciado proposto</h3>
                 <p>Escreva uma função que dado um total de anos de estudo retorna o
                     quão experiente o usuário é:</p>
-                <pre class="codigo"><code>function experiência(anos) { // código aqui }
-var anosEstudo = 7;
-experiência(anosEstudo);</code></pre>
+                <div class="codigo"><code>
+                    function experiência(anos) { // código aqui }<br />
+                    var anosEstudo = 7;<br />
+                    experiência(anosEstudo);
+                </code></div>
                 <ul id="listNivelExperienci">
                     <li>De 0-1 ano: Iniciante</li>
                     <li>De 1-3 anos: Intermediário</li>
@@ -180,15 +187,19 @@ experiência(anosEstudo);</code></pre>
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto</h3>
                 <p>Dado o seguinte vetor de objetos:</p>
-                <pre class="codigo"><code>var usuarios = [
-{
-    nome: "Diego",
-    habilidades: ["Javascript", "ReactJS", "Redux"]
-},
-{
-    nome: "Gabriel",
-    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
-}];</code></pre>
+                <div class="codigo">
+                    <code>
+                        var usuarios = [<br />
+                        {<br />
+                            nome: "Diego",<br />
+                            habilidades: ["Javascript", "ReactJS", "Redux"]<br />
+                        },<br />
+                        {<br />
+                            nome: "Gabriel",<br />
+                            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]<br />
+                        }];
+                    </code>
+                </div>
                 <p>Escreva uma função que produza o seguinte resultado:</p>
                 <p>O Diego possui as habilidades: Javascript, ReactJS, Redux</p>
                 <p>O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir</p>
