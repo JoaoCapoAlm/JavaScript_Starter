@@ -38,18 +38,19 @@
                     mouse por cima de algum quadrado troque sua cor para uma cor aleatória
                     gerada pela função abaixo:
                 </p>
-                // TODO: transformar tag pre em div e formar o espaçamento correto.
-                <pre class="codigo"><code>function getRandomColor() {
-    var letters = "0123456789ABCDEF";
-    var color = "#";
-    for (var i = 0; i &lt; 6; i++) {
-        color += letters[
-            Math.floor(Math.random() * 16)
-        ];
-    }
-    return color; //#E943F0
-}
-var newColor = getRandomColor();</code></pre>
+                <div class="codigo"><code>
+                    function getRandomColor() {<br />
+                        &emsp;var letters = "0123456789ABCDEF";<br />
+                        &emsp;var color = "#";<br />
+                        &emsp;for (var i = 0; i &lt; 6; i++) {<br />
+                            &emsp;&emsp;color += letters[<br />
+                            &emsp;&emsp;&emsp;Math.floor(Math.random() * 16)<br />
+                            &emsp;&emsp;];<br />
+                        &emsp;}<br />
+                        &emsp;return color; //#E943F0<br />
+                    }<br />
+                    var newColor = getRandomColor();
+                </code></div>
             </section>
         </div>
         <section class="row text-center">
@@ -66,8 +67,9 @@ var newColor = getRandomColor();</code></pre>
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto exercício 03</h3>
                 <p>A partir do seguinte vetor:</p>
-                // TODO: transformar tag pre em div e formar o espaçamento correto.
-                <pre class="codigo"><code>var nomes = ["Diego", "Gabriel", "Lucas"];</code></pre>
+                <div class="codigo"><code>
+                    var nomes = ["Diego", "Gabriel", "Lucas"];
+                </code></div>
                 <p>Preencha uma lista (TAG: ul) no HTML com os itens da seguinte forma:</p>
                 <ul>
                     <li>Diego</li>
@@ -78,11 +80,12 @@ var newColor = getRandomColor();</code></pre>
             <section class="coluna enunciado">
                 <h3 class="text-center">Enunciado proposto exercício 04</h3>
                 <p>Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir</p>
-                // TODO: transformar tag pre em div e formar o espaçamento correto.
-                <pre class="codigo"><code>&lt;input type="text" name="nome"&gt;
-&lt;button onClick="adicionar()"&gt;
-    Adicionar
-&lt;/button&gt;</code></pre>
+                <div class="codigo"><code>
+                    &lt;input type="text" name="nome"&gt;<br />
+                    &lt;button onClick="adicionar()"&gt;<br />
+                        &emsp;Adicionar<br />
+                    &lt;/button&gt;<br />
+                </code></div>
                 <p>Ao clicar no botão, a função <code>adicionar()</code> deve ser disparada adicionando um novo item a lista de
                     nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
                     demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.</p>
