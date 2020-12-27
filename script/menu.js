@@ -23,6 +23,11 @@ const modules = [menuMod1, menuMod2, menuMod4]
 var numberMod = 0;
 menuHome.href = root;
 
+if (titlePage === 'Starter'){
+  menuHome.classList.add('active');
+}
+
+
 modules.forEach(page => {
   numberMod !== 2 ? numberMod += 1 : numberMod += 2
 
