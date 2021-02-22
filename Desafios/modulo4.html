@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Almeida">
-    
+
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
@@ -12,9 +12,8 @@
     <title>Módulo 4</title>
 </head>
 <body>
-    <!-- TODO: Revisar texto da página -->
     <header>
-        <nav id="navMenu">
+        <nav id="menuArea">
         </nav>
         <div class="headerDesafios">
             <h1>Desafios módulo 04</h1>
@@ -117,21 +116,21 @@
         function getRepos(){
             event.preventDefault();
             event.stopPropagation();
-            
+
             const list = document.getElementById('listRepos');
             list.innerHTML = '<li id="liAviso">Carregando...</li>';
-            
+
             const aviso = document.getElementById('liAviso');
 
             const user = document.getElementById('txtUserGit').value;
             var repos = [];
-            
 
-            
+
+
             axios.get(`https://api.github.com/users/${user}/repos`)
             .then(function(response) {
                 var resposta = response.data;
-                
+
                 list.innerHTML = '';
                 resposta.forEach(item => repos.push(item.name));
                 repos.sort();

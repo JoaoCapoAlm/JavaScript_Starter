@@ -9,14 +9,30 @@
     --color-red: red;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
     font-size: 10px;
+}
+
+body {
     color: var(--color-black);
     background-color: var(--color-white-gray);
 }
 
+body.darkTheme {
+  background-color: #2d2d2d;
+  color: var(--color-white-gray);
+}
+
+body.darkTheme li > a {
+  color: var(--color-primary) !important;
+}
+
 html, body, h1, h2 {
-    margin: 0;   
+    margin: 0;
 }
 
 header {
@@ -29,7 +45,7 @@ header div {
     min-height: 20vh;
     padding-top: 15px;
     padding-bottom: 15px;
-    
+
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -47,7 +63,7 @@ nav {
     border-bottom: 2px solid var(--color-dark-purple);
 }
 
-nav a {
+nav a, #btnTheme {
     float: left;
     display: block;
     color: var(--color-white-gray);
@@ -63,9 +79,20 @@ nav a:hover {
 }
 
 nav a.active {
-    background-color: var(--color-primary);
-    font-weight: bold;
-    cursor: default;
+  background-color: var(--color-primary);
+  font-weight: bold;
+  cursor: default;
+}
+
+#btnTheme {
+  float: right;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: 0;
+  border-radius: 10px;
+
+  background-color: var(--color-primary);
+  text-transform: inherit;
 }
 
 main {
@@ -75,6 +102,7 @@ main {
 .wrapper {
     box-sizing: border-box;
     width: 90%;
+    max-width: 1260px;
     margin: 5vh auto;
 }
 
@@ -83,16 +111,16 @@ footer {
     bottom: 0;
     right: 0;
     left: 0;
-    
+
     border-top: 0.3rem solid var(--color-dark-purple);
     color: var(--color-white-gray);
     background-color: var(--color-black);
     padding-top: 3%;
     padding-bottom: 3%;
-    
+
     text-align: center;
     font-size: 1.6rem;
-    font-style: italic;    
+    font-style: italic;
 }
 
 footer i {
@@ -104,6 +132,10 @@ footer i {
     background-color: #474C50;
     color: white;
     padding: 10px 15px;
+}
+
+code {
+  font-family: 'Fira Code', 'Consola', monospace;
 }
 
 .exerciseNumber {
@@ -169,7 +201,7 @@ footer i {
     border-radius: 8px;
     background-color: var(--color-primary);
     color: var(--color-white-gray);
-    
+
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
@@ -211,13 +243,13 @@ footer i {
     html, body {
         font-size: 8px;
     }
-    
+
     nav a {
         width: 100%;
         border: 1px solid var(--color-primary);
     }
-    
+
     .grade {
-        grid-template-columns: 100% 
+        grid-template-columns: 100%
     }
 }

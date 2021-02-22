@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Almeida">
-    
+
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <nav id="navMenu">
+        <nav id="menuArea">
         </nav>
         <div class="headerDesafios">
             <h1>Desafios módulo 01</h1>
@@ -235,7 +235,7 @@
     </main>
     <script src="../script/menu.js"></script>
     <script type="application/javascript">
-        
+
         /* Exercício 01 */
         function montaEndereco() {
             event.preventDefault();
@@ -263,7 +263,7 @@
             const address = "O usuário mora em " + getCity + " / " + getState +
                 ", no bairro " + getNeighborhood + ", na rua " + getStreet
                 + " nº " + getNumber;
-            
+
             spanEndereco.innerHTML = address;
             spanEndereco.removeAttribute('style');
         };
@@ -296,10 +296,10 @@
             while (x <= y) {
                 if (x % 2 == 0)
                     list.push(x);
-                
+
                 x += 1;
             }
-            
+
             if (list.length > 0)
                 spanResult.innerText = 'Números pares: ' + list;
             else
@@ -318,17 +318,17 @@
             const hability = document.getElementById('txtNewHability').value;
             if (habilities.indexOf(hability) == -1){
                 habilities.push(hability);
-                
+
                 const itemList = document.createElement('li');
                 itemList.innerText = hability;
                 itemList.id = hability;
-                
+
                 const listHability = document.getElementById('listHabilities');
                 listHability.appendChild(itemList);
             }
 
             const search = habilities.indexOf('JavaScript');
-            
+
             if(search != -1){
                 document.getElementById('spanExists').innerText = 'Possui JavaScript? Sim';
             } else {
@@ -344,7 +344,7 @@
             const name = document.getElementById('txtName').value;
             var age = document.getElementById('txtAge').value;
             const spanExperience = document.getElementById('spanExperience');
-            
+
             if (age == '' || name == ''){
                 spanExperience.innerText = 'Preencha todos os campos.';
                 spanExperience.style.color = 'red';
@@ -354,7 +354,7 @@
             var experiency;
             if (age < 0) {
                 spanExperience.innerText = "O número de anos precisa ser maior ou igual a 0.";
-                spanExperience.style.color = 'red';                
+                spanExperience.style.color = 'red';
                 return;
             }
             else if (age >= 0 && age < 1)
@@ -376,27 +376,27 @@
             event.stopPropagation();
 
             var user = document.getElementById('txtUser');
-            
+
             if (user.value == null || user.value == undefined || user.value == ''){
                 alert('Preencha o campo com o nome!');
                 return;
             }
 
             const inputHiden = document.getElementById('inputHiden');
-            
+
             var valor = 1;
             if (inputHiden.value != '')
                 valor = parseInt(inputHiden.value);
 
             const name = user.value;
             var newItem = `<option value="${valor}">${name}</option>`;
-            
+
             user.value = null;
-            
+
             const ddlUsers = document.getElementById('ddlUsers');
             ddlUsers.innerHTML += newItem;
             inputHiden.value = valor + 1;
-            
+
             newItem = `<li value="${valor}">${name}`;
             newItem += `<ul id="ul_${valor}"></ul>`;
             newItem += '</li>';
@@ -422,7 +422,7 @@
                 erro.innerText = 'Preencha todos os campos';
                 return;
             }
-            
+
             const ulUser = document.getElementById(`ul_${user.value}`);
             var habilityUser = ulUser.innerHTML;
             habilityUser += `<li>${hability.value}</li>`;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Almeida">
-    
+
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
 
@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <nav id="navMenu">
+        <nav id="menuArea">
         </nav>
         <div class="headerDesafios">
             <h1>Desafios módulo 02</h1>
@@ -90,7 +90,7 @@
                     nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
                     demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.</p>
             </section>
-            
+
         </div>
         <h3 class="text-center resolucao">Resolução</h3>
         <div class="grade">
@@ -100,7 +100,7 @@
                         <label for="txtName">Nome:</label>
                         <input type="text" id="txtName" />
                     </p>
-                    <button id="addName" class="btnForm" onclick="newName(); return false;">Adicionar</button>    
+                    <button id="addName" class="btnForm" onclick="newName(); return false;">Adicionar</button>
                     <p><span class="error" id="spanListError"></span></p>
                 </form>
             </section>
@@ -137,11 +137,11 @@
             }
 
             const list = document.getElementById('listNames');
-            
+
             var newItem = document.createElement('li');
             newItem.innerText = name;
             newItem.id = list.getElementsByTagName('li').length;
-            
+
             list.appendChild(newItem);
             document.getElementById('spanListError').innerText = '';
         }
