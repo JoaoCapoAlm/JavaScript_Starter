@@ -7,144 +7,166 @@
 
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+    >
 
     <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
     <title>Módulo 4</title>
 </head>
 <body>
     <header>
-        <nav id="menuArea">
-        </nav>
-        <div class="headerDesafios">
-            <h1>Desafios módulo 04</h1>
-            <h2></h2>
-        </div>
+      <nav id="menuArea">
+      </nav>
+      <div class="headerDesafios">
+        <h1>Desafios módulo 04</h1>
+        <h2></h2>
+      </div>
     </header>
     <main>
-        <div class="exerciseNumber">
-            <h2>Exercícios 01</h2>
-        </div>
-        <div class="grade">
-            <section class="coluna">
-                <h3 class="text-center">Enunciado proposto exercício 01</h3>
-                <p>
-                    Crie uma função que recebe a idade de um usuário e retorna uma Promise que depois de 2
-                    segundos retornará se usuário é maior ou não que 18 anos. Se o usuário ter mais que 18 anos de
-                    idade o resultado deve cair no <code>.then</code>, caso contrário, no <code>.catch</code>
-                </p>
-                <div class="codigo"><code>
-                    function checaIdade(idade) {<br />
-                        &emsp;// Retornar uma promise<br />
-                    }<br /><br />
-                    checaIdade(20).then(function()<br />
-                    {<br />
-                        &emsp;console.log("Maior que 18");<br />
-                    }).catch(function()<br />
-                    {<br />
-                        &emsp;console.log("Menor que 18");<br />
-                    });
-                </code></div>
-            </section>
-            <section class="coluna">
-                <form method="POST">
-
-                </form>
-            </section>
-        </div>
-        <div class="exerciseNumber">
-            <h2>Exercícios 02 e 03</h2>
-        </div>
-        <div class="grade">
-            <section class="coluna">
-                <h3 class="text-center">Enunciado proposto exercício 02</h3>
-                <p>
-                    Crie uma tela com um <code>&lt;input&gt;</code> que deve receber o nome de um usuário no Github. Após digitar o
-                    nome do usuário e clicar no botão buscar a aplicação deve buscar pela API do Github (conforme
-                    URL abaixo) os dados de repositórios do usuário e mostrá-los em tela:
-                </p>
-                <p>URL de exemplo: https://api.github.com/users/diego3g/repos</p>
-                <p>Basta alterar "diego3g" pelo nome do usuário.</p>
-                <div class="codigo"><code>
-                    &lt;input type="text" name="user"&gt;<br />
-                    &lt;button onclick=""&gt;Adicionar&lt;/button&gt;
-                </code></div>
-                <p>Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:</p>
-                <div class="codigo"><code>
-                    &lt;ul&gt;<br />
-                        &emsp;&lt;li&gt;repo1&lt;/li&gt;<br />
-                        &emsp;&lt;li&gt;repo2&lt;/li&gt;<br />
-                        &emsp;&lt;li&gt;repo3&lt;/li&gt;<br />
-                        &emsp;&lt;li&gt;repo4&lt;/li&gt;<br />
-                        &emsp;&lt;li&gt;repo5&lt;/li&gt;<br />
-                    &lt;/ul&gt;
-                </code></div>
-            </section>
-            <section class="coluna">
-                <h3 class="text-center">Enunciado proposto exercício 03</h3>
-                <p>
-                    A partir do resultado do exemplo anterior adicione um indicador de carregamento em tela no lugar da lista apenas
-                    enquanto a requisição estiver acontecendo:
-                </p>
-                <div class="codigo"><code>&lt;li&gt;Carregando...&lt;/li&gt;</code></div>
-                <p>Além disso, adicione uma mensagem de erro em tela caso o usuário no Github não exista.</p>
-                <p>Dica: Quando o usuário não existe, a requisição irá cair no <code>.catch</code> com código de erro 404.</p>
-            </section>
-        </div>
-        <h3 class="text-center resolucao">Resolução</h3>
-        <section class="grade">
-            <div class="coluna">
-                <form method="post">
-                    <p>
-                        <label for="txtUserGit">Usuário GitHub</label>
-                        <input type="text" id="txtUserGit" />
-                    </p>
-                    <button id="btnRepos" class="btnForm" onclick="getRepos();">Procurar repositórios</button>
-                    <p><span class="error" id="spanRepoError"></span></p>
-                </form>
-            </div>
-            <div class="coluna">
-                <h3 class="text-center">Repositórios</h3>
-                <ul id="listRepos">
-                </ul>
-            </div>
+      <div class="exerciseNumber">
+          <h2>Exercícios 01</h2>
+      </div>
+      <div class="grade">
+        <section class="coluna">
+          <h3 class="text-center">Enunciado proposto exercício 01</h3>
+          <p>
+            Crie uma função que recebe a idade de um usuário e retorna uma Promise que depois de 2
+            segundos retornará se usuário é maior ou não que 18 anos. Se o usuário ter mais que 18 anos de
+            idade o resultado deve cair no <code>.then</code>, caso contrário, no <code>.catch</code>
+          </p>
+          <div class="codigo"><code>
+            function checaIdade(idade) {<br />
+              &emsp;// Retornar uma promise<br />
+            }<br /><br />
+            checaIdade(20).then(function()<br />
+            {<br />
+              &emsp;console.log("Maior que 18");<br />
+            }).catch(function()<br />
+            {<br />
+              &emsp;console.log("Menor que 18");<br />
+            });
+          </code></div>
         </section>
+        <section class="coluna">
+          <form method="POST">
+            <p>
+              <label for="txtAge">Idade</label>
+              <input type="number" id="txtAge" />
+            </p>
+            <button id="checkAge" class="btnForm" onclick="checkAge();">
+              Verificar idade
+            </button>
+          </form>
+        </section>
+      </div>
+      <div class="exerciseNumber">
+        <h2>Exercícios 02 e 03</h2>
+      </div>
+      <div class="grade">
+          <section class="coluna">
+              <h3 class="text-center">Enunciado proposto exercício 02</h3>
+              <p>
+                  Crie uma tela com um <code>&lt;input&gt;</code> que deve receber o nome de um usuário no Github. Após digitar o
+                  nome do usuário e clicar no botão buscar a aplicação deve buscar pela API do Github (conforme
+                  URL abaixo) os dados de repositórios do usuário e mostrá-los em tela:
+              </p>
+              <p>URL de exemplo: https://api.github.com/users/diego3g/repos</p>
+              <p>Basta alterar "diego3g" pelo nome do usuário.</p>
+              <div class="codigo"><code>
+                  &lt;input type="text" name="user"&gt;<br />
+                  &lt;button onclick=""&gt;Adicionar&lt;/button&gt;
+              </code></div>
+              <p>Depois de preencher o input e adicionar, a seguinte lista deve aparecer abaixo:</p>
+              <div class="codigo"><code>
+                  &lt;ul&gt;<br />
+                      &emsp;&lt;li&gt;repo1&lt;/li&gt;<br />
+                      &emsp;&lt;li&gt;repo2&lt;/li&gt;<br />
+                      &emsp;&lt;li&gt;repo3&lt;/li&gt;<br />
+                      &emsp;&lt;li&gt;repo4&lt;/li&gt;<br />
+                      &emsp;&lt;li&gt;repo5&lt;/li&gt;<br />
+                  &lt;/ul&gt;
+              </code></div>
+          </section>
+          <section class="coluna">
+              <h3 class="text-center">Enunciado proposto exercício 03</h3>
+              <p>
+                  A partir do resultado do exemplo anterior adicione um indicador de carregamento em tela no lugar da lista apenas
+                  enquanto a requisição estiver acontecendo:
+              </p>
+              <div class="codigo"><code>&lt;li&gt;Carregando...&lt;/li&gt;</code></div>
+              <p>Além disso, adicione uma mensagem de erro em tela caso o usuário no Github não exista.</p>
+              <p>Dica: Quando o usuário não existe, a requisição irá cair no <code>.catch</code> com código de erro 404.</p>
+          </section>
+      </div>
+      <h3 class="text-center resolucao">Resolução</h3>
+      <section class="grade">
+          <div class="coluna">
+          <form method="post">
+            <p>
+              <label for="txtUserGit">Usuário GitHub</label>
+              <input type="text" id="txtUserGit" />
+            </p>
+            <button id="btnRepos" class="btnForm" onclick="getRepos();">
+              Procurar repositórios
+            </button>
+            <p><span class="error" id="spanRepoError"></span></p>
+          </form>
+        </div>
+        <div class="coluna">
+          <h3 class="text-center">Repositórios</h3>
+          <ul id="listRepos">
+          </ul>
+        </div>
+      </section>
     </main>
-    <script src="../script/menu.js"></script>
+    <script src="../script/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        // Exercício 02 e 03
-        function getRepos(){
-            event.preventDefault();
-            event.stopPropagation();
-
-            const list = document.getElementById('listRepos');
-            list.innerHTML = '<li id="liAviso">Carregando...</li>';
-
-            const aviso = document.getElementById('liAviso');
-
-            const user = document.getElementById('txtUserGit').value;
-            var repos = [];
-
-
-
-            axios.get(`https://api.github.com/users/${user}/repos`)
-            .then(function(response) {
-                var resposta = response.data;
-
-                list.innerHTML = '';
-                resposta.forEach(item => repos.push(item.name));
-                repos.sort();
-                repos.forEach(repo => {
-                    const item = document.createElement('li');
-                    item.innerText = repo;
-                    list.appendChild(item);
-                });
-            }).catch(function(error){
-                aviso.innerText = error;
-                aviso.style.color = 'red';
-                console.warn(error);
-            });
+      // Exercício 01
+      const checkAge = () => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
         }
+        console.log(123);
+
+        return;
+      }
+
+      // Exercício 02 e 03
+      function getRepos(){
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        const list = document.getElementById('listRepos');
+        list.innerHTML = '<li id="liAviso">Carregando...</li>';
+
+        const aviso = document.getElementById('liAviso');
+
+        const user = document.getElementById('txtUserGit').value;
+        var repos = [];
+
+        axios.get(`https://api.github.com/users/${user}/repos`)
+        .then(function(response) {
+          var resposta = response.data;
+
+          list.innerHTML = '';
+          resposta.forEach(item => repos.push(item.name));
+          repos.sort();
+          repos.forEach(repo => {
+            const item = document.createElement('li');
+            item.innerText = repo;
+            list.appendChild(item);
+          });
+        }).catch(function(error){
+          aviso.innerText = error;
+          aviso.style.color = 'red';
+          console.warn(error);
+        });
+      }
     </script>
 </body>
 </html>

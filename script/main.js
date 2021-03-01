@@ -7,7 +7,6 @@ let themeDark = false;
 
 const changeTheme = () => {
   themeDark = !themeDark;
-  console.log(themeDark);
 
   if(themeDark) {
     document.body.classList.add('darkTheme');
