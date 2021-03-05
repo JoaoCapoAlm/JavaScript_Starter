@@ -31,7 +31,7 @@ body.darkTheme li > a {
   color: var(--color-primary) !important;
 }
 
-html, body, h1, h2 {
+html, body, h1, h2, h3 {
     margin: 0;
 }
 
@@ -39,7 +39,7 @@ header {
     min-height: var(--height-header);
 }
 
-header div {
+.headerDesafios {
     background-color: var(--color-black);
     color: var(--color-white-gray);
     min-height: 20vh;
@@ -186,6 +186,10 @@ code {
 .panel-heading {
     font-style: italic;
     border-bottom: 2.5px dotted var(--color-black);
+}
+
+.panel-title {
+  font-size: 2.4rem !important;
 }
 
 .panel-footer {
