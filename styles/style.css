@@ -153,8 +153,8 @@ code {
     display: grid;
     grid-template-columns: 50% 50%;
     margin-top: 5vh;
-    margin-bottom: 5vh;
     font-size: 1.6rem;
+    align-items: center;
 }
 
 .coluna {
